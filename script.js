@@ -1,46 +1,209 @@
-// CONTAGEM
-const data = new Date("April 22, 2026 00:00:00").getTime();
-
-setInterval(() => {
-  const now = new Date().getTime();
-  const diff = data - now;
-
-  document.getElementById("dias").innerText = Math.floor(diff / (1000*60*60*24));
-  document.getElementById("horas").innerText = Math.floor((diff/(1000*60*60))%24);
-  document.getElementById("minutos").innerText = Math.floor((diff/(1000*60))%60);
-  document.getElementById("segundos").innerText = Math.floor((diff/1000)%60);
-}, 1000);
-
-
-// SCROLL ANIMATION
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if(entry.isIntersecting){
-      entry.target.classList.add("show");
-    }
-  });
-});
-
-document.querySelectorAll(".hidden").forEach(el => observer.observe(el));
-
-
-// TEXTO DIGITANDO
-const text = "Fala, eu sou o Luan 👋";
-let i = 0;
-
-function typing(){
-  if(i < text.length){
-    document.getElementById("typing").innerHTML += text.charAt(i);
-    i++;
-    setTimeout(typing, 50);
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
-typing();
+body {
+  background: #0f0f1a;
+  color: white;
+}
 
+/* FUNDO */
+.background {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at top, #6c63ff, transparent);
+  filter: blur(120px);
+  z-index: -1;
+}
 
-// TOGGLE CARTA
-function toggleCarta() {
-  const carta = document.getElementById("cartaTexto");
-  carta.classList.toggle("show");
+/* CONTAINER FULL */
+.container {
+  width: 100%;
+  padding: 60px 10%;
+}
+
+/* HERO */
+.hero {
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero h1 {
+  font-size: 48px;
+  font-weight: 600;
+}
+
+.hero p {
+  margin-top: 10px;
+  opacity: 0.7;
+  font-size: 18px;
+}
+
+/* BOTÕES */
+.buttons {
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 12px 20px;
+  background: #6c63ff;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  margin-right: 10px;
+  display: inline-block;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  transform: translateY(-3px);
+}
+
+.outline {
+  background: transparent;
+  border: 1px solid #6c63ff;
+}
+
+/* SEÇÕES */
+section {
+  margin-top: 80px;
+}
+
+h2 {
+  font-size: 28px;
+  margin-bottom: 15px;
+}
+
+/* SOBRE */
+.about p {
+  margin-bottom: 15px;
+  line-height: 1.6;
+  opacity: 0.85;
+}
+
+.destaque {
+  font-weight: 600;
+  color: #6c63ff;
+}
+
+/* CONTAGEM */
+.countdown {
+  display: flex;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.countdown div {
+  background: rgba(255,255,255,0.1);
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.countdown span {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+/* PIX */
+.pix h3 {
+  margin-top: 10px;
+  color: #6c63ff;
+}
+
+/* CARTA */
+.carta-box {
+  display: none;
+  margin-top: 20px;
+  background: rgba(255,255,255,0.05);
+  padding: 20px;
+  border-radius: 10px;
+  line-height: 1.6;
+}
+
+.carta-box.show {
+  display: block;
+}
+
+/* ANIMAÇÃO */
+.hidden {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===================== */
+/* 📱 RESPONSIVO MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 40px 20px;
+  }
+
+  .hero {
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* BOTÕES */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  /* CONTAGEM */
+  .countdown {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .countdown div {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .countdown span {
+    font-size: 18px;
+  }
+
+  /* TEXTOS */
+  h2 {
+    font-size: 22px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
 }
