@@ -20,7 +20,7 @@ body {
   z-index: -1;
 }
 
-/* CONTAINER FULL */
+/* CONTAINER */
 .container {
   width: 100%;
   padding: 60px 10%;
@@ -41,7 +41,7 @@ body {
 
 .hero p {
   margin-top: 10px;
-  opacity: 0.7;
+  opacity: 0.8;
   font-size: 18px;
 }
 
@@ -51,14 +51,15 @@ body {
 }
 
 .btn {
-  padding: 12px 20px;
+  padding: 14px 22px;
   background: #6c63ff;
   color: white;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 10px;
   margin-right: 10px;
   display: inline-block;
   transition: 0.3s;
+  font-size: 16px;
 }
 
 .btn:hover {
@@ -76,15 +77,16 @@ section {
 }
 
 h2 {
-  font-size: 28px;
-  margin-bottom: 15px;
+  font-size: 30px;
+  margin-bottom: 20px;
 }
 
 /* SOBRE */
 .about p {
   margin-bottom: 15px;
-  line-height: 1.6;
-  opacity: 0.85;
+  line-height: 1.7;
+  opacity: 0.9;
+  font-size: 17px;
 }
 
 .destaque {
@@ -102,13 +104,13 @@ h2 {
 .countdown div {
   background: rgba(255,255,255,0.1);
   padding: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
   text-align: center;
-  min-width: 80px;
+  min-width: 90px;
 }
 
 .countdown span {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
 }
 
@@ -116,6 +118,7 @@ h2 {
 .pix h3 {
   margin-top: 10px;
   color: #6c63ff;
+  font-size: 20px;
 }
 
 /* CARTA */
@@ -124,8 +127,9 @@ h2 {
   margin-top: 20px;
   background: rgba(255,255,255,0.05);
   padding: 20px;
-  border-radius: 10px;
-  line-height: 1.6;
+  border-radius: 12px;
+  line-height: 1.7;
+  font-size: 16px;
 }
 
 .carta-box.show {
@@ -151,7 +155,7 @@ h2 {
 @media (max-width: 768px) {
 
   .container {
-    padding: 40px 20px;
+    padding: 30px 15px;
   }
 
   .hero {
@@ -160,50 +164,51 @@ h2 {
   }
 
   .hero h1 {
-    font-size: 28px;
+    font-size: 32px;
+    line-height: 1.3;
   }
 
   .hero p {
-    font-size: 16px;
+    font-size: 18px;
   }
 
-  /* BOTÕES */
+  /* BOTÕES GRANDES */
   .buttons {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 12px;
   }
 
   .btn {
     width: 100%;
-    text-align: center;
-    font-size: 14px;
+    font-size: 16px;
+    padding: 16px;
     margin-right: 0;
-  }
-
-  /* CONTAGEM */
-  .countdown {
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 10px;
-  }
-
-  .countdown div {
-    width: 70px;
-    padding: 10px;
-  }
-
-  .countdown span {
-    font-size: 18px;
   }
 
   /* TEXTOS */
   h2 {
-    font-size: 22px;
+    font-size: 26px;
   }
 
   .about p {
-    font-size: 14px;
+    font-size: 16px;
+  }
+
+  /* CONTAGEM GRANDE */
+  .countdown {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  .countdown div {
+    width: 80px;
+    padding: 12px;
+  }
+
+  .countdown span {
+    font-size: 22px;
   }
 
 }
