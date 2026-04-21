@@ -20,7 +20,7 @@ body {
   z-index: -1;
 }
 
-/* FULL WIDTH */
+/* CONTAINER FULL */
 .container {
   width: 100%;
   padding: 60px 10%;
@@ -28,7 +28,7 @@ body {
 
 /* HERO */
 .hero {
-  height: 80vh;
+  min-height: 80vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -80,7 +80,7 @@ h2 {
   margin-bottom: 15px;
 }
 
-/* TEXTO */
+/* SOBRE */
 .about p {
   margin-bottom: 15px;
   line-height: 1.6;
@@ -96,12 +96,20 @@ h2 {
 .countdown {
   display: flex;
   gap: 20px;
+  margin-top: 20px;
 }
 
 .countdown div {
   background: rgba(255,255,255,0.1);
   padding: 20px;
   border-radius: 10px;
+  text-align: center;
+  min-width: 80px;
+}
+
+.countdown span {
+  font-size: 24px;
+  font-weight: bold;
 }
 
 /* PIX */
@@ -134,4 +142,68 @@ h2 {
 .show {
   opacity: 1;
   transform: translateY(0);
+}
+
+/* ===================== */
+/* 📱 RESPONSIVO MOBILE */
+/* ===================== */
+
+@media (max-width: 768px) {
+
+  .container {
+    padding: 40px 20px;
+  }
+
+  .hero {
+    min-height: auto;
+    text-align: center;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .hero p {
+    font-size: 16px;
+  }
+
+  /* BOTÕES */
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .btn {
+    width: 100%;
+    text-align: center;
+    font-size: 14px;
+    margin-right: 0;
+  }
+
+  /* CONTAGEM */
+  .countdown {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .countdown div {
+    width: 70px;
+    padding: 10px;
+  }
+
+  .countdown span {
+    font-size: 18px;
+  }
+
+  /* TEXTOS */
+  h2 {
+    font-size: 22px;
+  }
+
+  .about p {
+    font-size: 14px;
+  }
+
 }
